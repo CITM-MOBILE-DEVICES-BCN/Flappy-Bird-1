@@ -9,8 +9,15 @@ public class Countscore : MonoBehaviour
     private int score = 0;
     private int highscore = 0;
     [SerializeField] private TextMeshProUGUI textUI;
+
+    public AudioSource source;
+    public AudioClip clip;
+
+
     public void IncreaseScore()
     {
+
+        source.PlayOneShot(clip);
         score++;
         if (score > highscore)
         {

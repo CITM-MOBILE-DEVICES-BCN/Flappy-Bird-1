@@ -8,6 +8,9 @@ using Cinemachine;
 
 public class FlyBehaviour : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
+
 
     [SerializeField] private float velocity = 160.5f;
     [SerializeField] private float rotationSpeedNormal = 4f;
@@ -21,7 +24,7 @@ public class FlyBehaviour : MonoBehaviour
     private void Start()
     {
 
-        rotationSpeedFinal = rotationSpeedFirstperson;
+        rotationSpeedFinal = rotationSpeedNormal;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -34,6 +37,7 @@ public class FlyBehaviour : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             rb.AddForce(new Vector3(0f, velocity, 0f), ForceMode.Acceleration);
+            source.PlayOneShot(clip);
 
         }
         rb.position = new Vector3(0.0f, rb.position.y, rb.position.z);
