@@ -28,6 +28,7 @@ public class FlyBehaviour : MonoBehaviour
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            rb.velocity=Vector3.zero;
             rb.AddForce(new Vector3(0f, velocity, 0f), ForceMode.Acceleration);
 
         }
