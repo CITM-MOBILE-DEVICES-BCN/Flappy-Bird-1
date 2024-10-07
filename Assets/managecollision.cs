@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Managecollision : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private SpawnPipe spawner;
+    [SerializeField] private Countscore scoreManager;
 
     void Start()
     {
@@ -30,6 +30,7 @@ public class Managecollision : MonoBehaviour
         if (other.gameObject.CompareTag("Score"))
         {
             //increase score by 1
+            scoreManager.IncreaseScore();
         }
     }
 
