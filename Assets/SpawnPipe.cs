@@ -25,6 +25,8 @@ public class SpawnPipe : MonoBehaviour
 
         timer += Time.deltaTime;
     }
+
+
     private void Spawn()
     {
 
